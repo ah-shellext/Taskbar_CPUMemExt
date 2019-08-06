@@ -8,7 +8,7 @@
 
 ### Path
 + `Program Files\Microsoft SDKs\Windows\vx.xA\bin\NETFX x.x.x Tools` -> `sn.exe` / `ildasm.exe`
-+ `Windows\Microsoft.NET\Framework64\vx.x.x` -> `ilasm.exe`
++ `Windows\Microsoft.NET\Framework64\vx.x.x` -> `ilasm.exe` / `regasm.exe`
 
 ### Depedences
 ```bash
