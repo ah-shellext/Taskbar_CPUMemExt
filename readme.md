@@ -1,8 +1,10 @@
 # Taskbar_CPUMemExt
++ My personal tool to monitor CPU and Memory Usage
 
 ### Environment
-+ `.NET Code 2.2`
++ `.NET Core 2.2`
 + `.NET Framework 4.7`
++ `TargetFramework netstandard2.0`
 + `VS Code`
 + `Windows 10 Version 1803`
 
@@ -45,16 +47,25 @@ ilasm CpuMemExt.il /DLL /OUTPUT=CpuMemExt.dll /KEY=key.snk # All key to dll
 # Register
 cp ./publish/SharpShell.dll ./SharpShell.dll
 regasm /codebase CpuMemExt.dll
+
+# Restart explorer.exe
 ```
 
 ### UnRegister
 ```bash
 regasm /u CpuMemExt.dll
+
+# Restart explorer.exe
 ```
 
 ### Problem
-+ 型 'Font' への参照では、'System.Drawing' で定義されていると指定されていますが、見つかりませんでした。
-+ `this.BackColor = System.Drawing.Color.Transparent` 不起效果
++ 型 'Font' への参照では、'System.Drawing' で定義されていると指定されていますが、見つかりませんでした。 (CS7069)
++ 型 'ContentAlignment' への参照では、'System.Drawing' で定義されていると指定されていますが、見つかりませんでした。 (CS7069)
++ `StartIsBack` tool priority error
+
+### Screenshot
+![No_Theme_Screenshot](./assets/no_theme.jpg)
+![Has_Theme_Screenshot](./assets/has_theme.jpg)
 
 ### Remark
 > ### Ensure you register with the correct bitness

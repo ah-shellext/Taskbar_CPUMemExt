@@ -11,8 +11,6 @@ public class CpuMemDeskBand : SharpDeskBand {
 
     protected override BandOptions GetBandOptions() {
 
-        // Don't use NameSpace For SharpDeskBandService, for it will change the title
-        
         return new BandOptions {
             HasVariableHeight = false,
             IsSunken = false,

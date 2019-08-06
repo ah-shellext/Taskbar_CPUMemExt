@@ -18,9 +18,8 @@ namespace DeskBandUI_NS
             decimal percentOccupied = 100 - percentFree;
             double memRate = (double) percentOccupied;
 
-            label_CPU.Text = "CPU：" + cpuRate.ToString("F1") + "%";
-            label_Mem.Text = "Mem：" + memRate.ToString("F1") + "%";
-            Console.WriteLine(memRate);
+            label_CPU.Text = $"CPU : {cpuRate.ToString("F1")}%";
+            label_Mem.Text = $"Mem : {memRate.ToString("F1")}%";
         }
 
         private void ToolStripMenuItem_Setting_Click(object sender, EventArgs e) {

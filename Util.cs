@@ -28,6 +28,9 @@ namespace Util {
             public int ThreadCount;
         }
 
+        /// <summary>
+        /// get Mem Available MB
+        /// </summary>
         public static Int64 GetPhysicalAvailableMemoryInMiB()
         {
             PerformanceInformation pi = new PerformanceInformation();
@@ -37,6 +40,9 @@ namespace Util {
                 return -1;
         }
 
+        /// <summary>
+        /// get Mem Total MB
+        /// </summary>
         public static Int64 GetTotalMemoryInMiB()
         {
             PerformanceInformation pi = new PerformanceInformation();
@@ -56,6 +62,9 @@ namespace Util {
         private static TimeSpan last_kernelTime;
         private static TimeSpan last_userTime;
 
+        /// <summary>
+        /// get CPU use rate, return 0 - 100 (% nuki)
+        /// </summary>
         public static double getCPURate() {
             ComTypes.FILETIME idleTime, kernelTime, userTime;
             GetSystemTimes(out idleTime, out kernelTime, out userTime);
@@ -76,9 +85,12 @@ namespace Util {
 
             double rate = (tot - idlDiff).TotalMilliseconds / tot.TotalMilliseconds * 100;
 
-            return rate;
+            return (rate < 0) ? -rate : rate;
         }
 
+        /// <summary>
+        /// `ComTypes.FILETIME` -> `TimeSpan`
+        /// </summary>
         private static TimeSpan GetTimeSpanFromFileTime(ComTypes.FILETIME time) => 
             TimeSpan.FromMilliseconds((((ulong)time.dwHighDateTime << 32) + (uint)time.dwLowDateTime) * 0.000001);
     }
