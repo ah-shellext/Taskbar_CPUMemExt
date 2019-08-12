@@ -17,7 +17,7 @@ namespace DeskBandUI_NS
 
         #region 组件设计器生成的代码
 
-       private void InitializeComponent()
+        private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
             this.label_CPU = new System.Windows.Forms.Label();
@@ -37,12 +37,12 @@ namespace DeskBandUI_NS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_CPU.BackColor = System.Drawing.Color.Transparent;
             this.label_CPU.ForeColor = System.Drawing.Color.White;
-            this.label_CPU.Location = new System.Drawing.Point(1, 4);
+            this.label_CPU.Location = new System.Drawing.Point(1, 5);
             this.label_CPU.Name = "label_CPU";
             this.label_CPU.Size = new System.Drawing.Size(74, 15);
             this.label_CPU.TabIndex = 1;
             this.label_CPU.Text = "CPU : 00.0%";
-            // this.label_CPU.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_CPU.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_Mem
             // 
@@ -50,12 +50,12 @@ namespace DeskBandUI_NS
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Mem.BackColor = System.Drawing.Color.Transparent;
             this.label_Mem.ForeColor = System.Drawing.Color.White;
-            this.label_Mem.Location = new System.Drawing.Point(1, 21);
+            this.label_Mem.Location = new System.Drawing.Point(1, 20);
             this.label_Mem.Name = "label_Mem";
             this.label_Mem.Size = new System.Drawing.Size(74, 15);
             this.label_Mem.TabIndex = 2;
             this.label_Mem.Text = "Mem : 00.0%";
-            // this.label_Mem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Mem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer_Monitor
             // 
@@ -100,7 +100,7 @@ namespace DeskBandUI_NS
             this.BackColor = System.Drawing.Color.Black;
             this.ContextMenuStrip = this.contextMenu;
             this.Controls.Add(this.mainPanel);
-            // this.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Font = new System.Drawing.Font("Yu Gothic UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MinimumSize = new System.Drawing.Size(76, 40);
             this.Name = "DeskBandUI";

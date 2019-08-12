@@ -5,17 +5,21 @@ rm bin/ obj/ -rf
 dotnet publish -c Release
 
 :: Generate Key
-cd ./bin/Release/netstandard2.0/
+cd ./bin/Release/net48/
 sn -k key.snk
 
 :: ReCompile
 ildasm Taskbar_CPUMemExt.dll /OUTPUT=CpuMemExt.il
 ilasm CpuMemExt.il /DLL /OUTPUT=CpuMemExt.dll /KEY=key.snk
 
-:: Register
-cp ./publish/SharpShell.dll ./SharpShell.dll
-regasm /codebase CpuMemExt.dll
+:: Backup dll
+cp ./publish/SharpShell.dll ../../../build/SharpShell.dll 
+cp ./CpuMemExt.dll ../../../build/CpuMemExt.dll 
+cd ../../..
 
-:: regasm /u CpuMemExt.dll
+:: Register
+regasm /codebase ./build/CpuMemExt.dll
+
+:: regasm /u ./build/CpuMemExt.dll
 
 @echo on

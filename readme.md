@@ -2,9 +2,8 @@
 + My personal tool to monitor CPU and Memory Usage
 
 ### Environment
-+ `.NET Core 2.2`
-+ `.NET Framework 4.7`
-+ `TargetFramework netstandard2.0`
++ `.NET Core cli 2.2.401`
++ `.NET Framework 4.8`
 + `VS Code`
 + `Windows 10 Version 1803`
 
@@ -21,12 +20,12 @@ dotnet add package System.Drawing.Common
 ```
 
 ```xml
-<ItemGroup>
-    <PackageReference Include="SharpShell" Version="2.7.1" />
-    <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
-    <PackageReference Include="System.Windows.Forms" Version="4.0.0.0" />
-</ItemGroup>
+<PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+</PropertyGroup>
 ```
+
++ See [Taskbar_CPUMemExt.csproj](./Taskbar_CPUMemExt.csproj)
 
 ### Build
 ```bash
@@ -44,23 +43,25 @@ sn -k key.snk # write strong key pair
 ildasm Taskbar_CPUMemExt.dll /OUTPUT=CpuMemExt.il
 ilasm CpuMemExt.il /DLL /OUTPUT=CpuMemExt.dll /KEY=key.snk # All key to dll
 
+# Backup dll
+cp ./publish/SharpShell.dll ../../../build/SharpShell.dll 
+cp ./CpuMemExt.dll ../../../build/CpuMemExt.dll 
+cd ../../..
+
 # Register
-cp ./publish/SharpShell.dll ./SharpShell.dll
-regasm /codebase CpuMemExt.dll
+regasm /codebase ./build/CpuMemExt.dll
 
 # Restart explorer.exe
 ```
 
 ### UnRegister
 ```bash
-regasm /u CpuMemExt.dll
+regasm /u ./build/CpuMemExt.dll
 
 # Restart explorer.exe
 ```
 
 ### Problem
-+ 型 'Font' への参照では、'System.Drawing' で定義されていると指定されていますが、見つかりませんでした。 (CS7069)
-+ 型 'ContentAlignment' への参照では、'System.Drawing' で定義されていると指定されていますが、見つかりませんでした。 (CS7069)
 + `StartIsBack` tool priority error
 
 ### Screenshot
