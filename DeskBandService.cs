@@ -5,8 +5,10 @@ using SharpShell.SharpDeskBand;
 
 [ComVisible(true)]
 [DisplayName("CPU Mem")]
-public class CpuMemDeskBand : SharpDeskBand {
+public class CPUMemMonitor : SharpDeskBand {
 
+    // Class name is toolbar extension name
+    
     protected override System.Windows.Forms.UserControl CreateDeskBand() => new DeskBandUI();
 
     protected override BandOptions GetBandOptions() {

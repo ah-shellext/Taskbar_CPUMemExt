@@ -85,7 +85,7 @@ namespace Util {
 
             double rate = (tot - idlDiff).TotalMilliseconds / tot.TotalMilliseconds * 100;
 
-            return (rate < 0) ? -rate : rate;
+            return rate < 0 ? -rate : rate;
         }
 
         /// <summary>

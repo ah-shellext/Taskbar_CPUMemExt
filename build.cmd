@@ -16,4 +16,6 @@ ilasm CpuMemExt.il /DLL /OUTPUT=CpuMemExt.dll /KEY=key.snk
 cp ./publish/SharpShell.dll ./SharpShell.dll
 regasm /codebase CpuMemExt.dll
 
+:: regasm /u CpuMemExt.dll
+
 @echo on
